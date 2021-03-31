@@ -1,0 +1,52 @@
+@import "./styles/utils";
+
+// SassComponent <- className으로 지정해줬음
+.SassComponent {
+  display: flex;
+  .box {
+    // 일반 CSS에서의 .SassCompent .box 와 동일한 의미
+    background: red;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+    &.red {
+      // .red 클래스가 .box와 함께 사용되었을 때 -> &은 자기 자신을 뜻함
+      background: $red;
+      @include square(1); // HTML의 @import로 CSS 파일 로드한 것과 유사한 느낌!
+    }
+
+    &.orange {
+      background: $orange;
+      @include square(2);
+    }
+
+    &.yellow {
+      background: $orange;
+      @include square(3);
+    }
+
+    &.green {
+      background: $green;
+      @include square(4);
+    }
+
+    &.blue {
+      background: $blue;
+      @include square(5);
+    }
+
+    &.indigo {
+      background: $indigo;
+      @include square(6);
+    }
+
+    &.violet {
+      background: $violet;
+      @include square(7);
+    }
+
+    &:hover {
+      background: black;
+    }
+  }
+}
