@@ -31,6 +31,7 @@ const Navbar = () => {
         style={{
           overlay: {
             backgroundColor: "gray",
+            zIndex: "2",
           },
           content: {
             width: "30%",

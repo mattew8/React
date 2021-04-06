@@ -3,6 +3,7 @@
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "http-server": "^0.12.3",
+    "node-sass": "^5.0.0",
     "parcel-bundler": "^1.12.5",
     "qs": "^6.9.6",
     "react-modal": "^3.12.1",

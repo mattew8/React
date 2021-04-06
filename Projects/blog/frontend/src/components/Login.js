@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import CSRFToken from "./CSRF";
 
 const LoginBox = styled.div`
   text-align: center;
@@ -39,17 +40,40 @@ const Login = () => {
     setJoinLogin(!joinLogin);
   };
 
+  // 로그인 input관리 및 요청
+  const [loginInput, setLoginInput] = useState("");
+
+  const onLoginChange = (e) => {
+    setLoginInput(e.target.value);
+  };
+
+  const onLoginClick = () => {
+    console.log("로그인 시도");
+  };
+
   return (
     <LoginBox>
       {joinLogin ? (
         <>
           <div className="loginHeader">로그인</div>
-          <form>
-            <input type="text" placeholder="아이디를 입력하세요"></input>
+
+          {/* form이 아니라, 로그인 담당 URL로 DRF에 요청 보내도록 */}
+          <form action="http://localhost:8000/rest-auth/login/" method="POST">
+            <input
+              type="text"
+              placeholder="아이디를 입력하세요"
+              onChange={onLoginChange}
+            ></input>
             <br />
-            <input type="text" placeholder="비밀번호를 입력하세요"></input>
+            <input
+              type="text"
+              placeholder="비밀번호를 입력하세요"
+              onChange={onLoginChange}
+            ></input>
             <br />
-            <button className="loginBtn">로그인</button>
+            <button className="loginBtn" onClick={onLoginClick}>
+              로그인
+            </button>
           </form>
           <div className="goSignUp">
             아직 회원이 아니신가요?
