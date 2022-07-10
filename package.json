@@ -11,5 +11,6 @@
     "react-virtualized": "^9.22.3",
     "styled-components": "^5.2.1",
     "swiper": "^6.5.4"
-  }
+  },
+  "version": "0.0.0"
 }
