@@ -57,7 +57,7 @@ const TodoInsert = ({
     setTodoList(todoList.concat(newTodo));
     setInputVal("");
     e.preventDefault(); // form으로 만들었으니까....
-    // e.target.reset(); // input창 초기화
+    (e.target as HTMLFormElement).reset();
     nextId.current += 1; // current를 안해주면 error
   };
 
