@@ -6,6 +6,7 @@ import {
   MdRemoveCircleOutline,
 } from "react-icons/md";
 import styled from "styled-components";
+import { todoItemType } from "../types/todo";
 
 const TodoItemBox = styled.div`
   border: 2px solid green;
@@ -37,7 +38,15 @@ const TodoItemBox = styled.div`
   }
 `;
 
-const TodoItem = ({ todo, removeTodo, changeToggle }) => {
+const TodoItem = ({
+  todo,
+  removeTodo,
+  changeToggle,
+}: {
+  todo: todoItemType;
+  removeTodo: (todoId: Number) => void;
+  changeToggle: (todoId: Number) => void;
+}) => {
   const { id, text, checked } = todo;
   //   비구조화 객체 할당을 통해 todo 속 값들을 새로운 변수(text, checked)에 담아준 모습
 
